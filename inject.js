@@ -18,7 +18,7 @@ function extendPlaybackSpeeds(player) {
       }
     }
   }
-  if (player) {
+  if (player && sessionStorage.getItem("yt-player-playback-rate")) {
     player.setPlaybackRate(parseFloat(JSON.parse(sessionStorage.getItem("yt-player-playback-rate")).data));
   }
 }
