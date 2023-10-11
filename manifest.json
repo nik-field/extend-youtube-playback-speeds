@@ -2,8 +2,7 @@
   "manifest_version": 3,
   "name": "Youtube Speed Options Extender",
   "version": "0.1.0",
-  "description": "Extends the available playback rate options on YouTube",
-  "permissions": ["activeTab"],
+  "description": "Extends the available playback rate options on YouTube.com",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
@@ -16,8 +15,10 @@
       "js": ["contentScript.js"]
     }
   ],
-  "web_accessible_resources": [{
-    "resources": ["inject.js"],
-    "matches": ["<all_urls>"]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
