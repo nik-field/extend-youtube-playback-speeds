@@ -1,6 +1,6 @@
 function getYtdPlayer() {
   const ytdPlayer = document.getElementById("ytd-player");
-  if (typeof ytdPlayer?.getPlayer === "function") {
+  if (ytdPlayer && ytdPlayer.getPlayer() !== null) {
     extendPlaybackSpeeds(ytdPlayer.getPlayer());
   } else {
     return false;
@@ -18,8 +18,8 @@ function extendPlaybackSpeeds(player) {
       }
     }
   }
-  if (sessionStorage["yt-player-playback-rate"]) {
-    player.setPlaybackRate(parseFloat(JSON.parse(sessionStorage["yt-player-playback-rate"])?.data));
+  if (player) {
+    player.setPlaybackRate(parseFloat(JSON.parse(sessionStorage.getItem("yt-player-playback-rate")).data));
   }
 }
 
